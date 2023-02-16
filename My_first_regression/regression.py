@@ -7,6 +7,10 @@ import seaborn as sns
 import datetime
 import yaml
 from quarto import render
+import plotly.express as px
+from statsmodels.graphics.gofplots import qqplot
+import matplotlib.pyplot as plt
+
 
 
 out_filename = "regression_QA_test"
