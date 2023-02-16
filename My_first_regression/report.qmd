@@ -41,12 +41,15 @@ from IPython.display import display, Markdown
 from tabulate import tabulate
 import pandas as pd
 import numpy as np
-from plotting import residuals_plot, qq_plot, scatter_plot
-# Tabulating the config data
-# tabulate() doesn't accept dictionaries as arguments so we are converting
-# the dict to a list of lists, ignoring the file_path setting
-headers = ["Config Setting", "Value"]
-print(tabulate([[key, val] for key, val in config.items() if key != "file_path"], headers = headers))
 ```
 
 ## Model Performance
+
+```{python}
+display(Markdown(f"""The pipeline took {pipeline_runtime:.3}s to run. Below we see the best fit line of the model plotted alongside the data. The model has a coefficient of determination (R^2) of {r_squared:.5}, and the predicted intercept and gradient values are {theta_0:.3} and {theta_1:.3} respectively."""))
+```
+
+
+```{python}
+scatter_plot(theta_0, theta_1, np.asarray(x_data), np.asarray(y_data))
+```
