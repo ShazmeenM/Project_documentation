@@ -94,3 +94,15 @@ A QQ plot also allows us to assess whether the residuals are likely to have come
 ```{python}
 sm.qqplot(results.resid, line='45')
 ```
+
+```{python}
+from scipy.stats import shapiro
+shapiro (possum['skullw'])
+stat, p = shapiro(possum['skullw'])
+```
+
+
+```{python}
+display(Markdown(f"""Finally we also perform a Shapiro-Wilk test. Shapiro-Wilk test is a test of normality, it determines whether the given sample comes from the normal distribution or not. We find a Wilk-statistic of {stat: 0.3f} and a p-value of {p: 0.3f} for the residuals. """))
+```
+
