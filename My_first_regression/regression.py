@@ -11,10 +11,7 @@ import plotly.express as px
 from statsmodels.graphics.gofplots import qqplot
 import matplotlib.pyplot as plt
 
-
-
 out_filename = "regression_QA_test"
-
 
 # Read the CSV file on possum and view some data points
 possum = pd.read_csv("C:\\Users\\maroos/Downloads/possum.csv")

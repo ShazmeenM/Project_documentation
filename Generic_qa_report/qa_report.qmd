@@ -1,0 +1,60 @@
+---
+title: "Quality Assurance Report"
+author: "Shazmeen Maroof"
+date: now
+execute:
+  echo: false
+format:
+  html:
+    embed-resources: true
+    toc: true
+    toc-title: "Contents"
+    toc-location: left
+    html-math-method: katex
+---
+
+```{python}
+import numpy as np
+import pandas as pd
+from IPython.display import display, Markdown
+
+housing_introduction = pd.read_excel("D:\\git_demo\\Generic_qa_report/Housing_data.xlsx", sheet_name="introduction")
+
+housing_sale_counts = pd.read_excel("D:\\git_demo\\Generic_qa_report/Housing_data.xlsx", sheet_name="sale_counts")
+
+housing_median_sale_price = pd.read_excel("D:\\git_demo\\Generic_qa_report/Housing_data.xlsx", sheet_name="median_sale_price")
+```
+
+## Introduction
+
+```{python}
+display(Markdown(f""" The title of the dataset is {housing_introduction.at[0, 'Column_b']}. {housing_introduction.at[1, 'Column_b']}. The data has been taken from {housing_introduction.at[2, 'Column_b']}. The data is published {housing_introduction.at[3, 'Column_b']}. The data spans from {housing_introduction.at[4, 'Column_b']}. The data limitations are {housing_introduction.at[5, 'Column_b']}. The data is published {housing_introduction.at[7, 'Column_b']} confidence intervals. {housing_introduction.at[8, 'Column_b']}.  """))
+``` 
+
+
+## Summary of tests performed
+We have performed 10 tests on the data. The data has passed 4 tests and failed 3. 
+
+
+
+
+
+For a demonstration of a line plot on a polar axis, see @fig-polar.
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
