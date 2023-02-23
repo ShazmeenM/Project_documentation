@@ -34,15 +34,23 @@ display(Markdown(f""" The title of the dataset is {housing_introduction.at[0, 'C
 
 ## Summary of tests performed
 
-There are “nrows” and “ncolumns” in the dataset. We have performed "n" tests on the data. The data has passed "n" tests and failed "n". 
+```{python}
+# Read total number of rows and columns in the data
+nrow, ncol = housing_sale_counts.shape
+```
+
+```{python}
+display(Markdown(f""" There are {nrow} rows and {ncol} columns in the dataset. We have performed "n" tests on the data. The data has passed "n" tests and failed "n".  """))
+``` 
+
+## Table 1: List of tests  
+The table would include columns on 1) Test number, 2) Test Description, 3) Data Specific Description of test, 4) Test Status, 5) Description of Status). I will compile the table after performing all the tests.
+
+
+## Table 2: List of failed tests with their location  
+Pending
 
 ## Data cleaning tests  
-
-
-## Table 1: List of tests (Test_number, Description, Long_description, Status, Status_description)  
-
-
-## List of failed tests with their location  
 
 Test 1:
 
@@ -59,7 +67,7 @@ def test_sum_dwellings():
 print (test_sum_dwellings())
 ```
 
-Test 2: Flats should be lesser than all other dwelling types  
+Test 2: 
 
 ```{python}
 def test_num_flats():
@@ -74,90 +82,66 @@ def test_num_flats():
 print (test_num_flats())
 ```
 
-Test 3: 
+Test 3:  
+
 Description: Checks if any of the variables in the dataset has a negative value.
 Data specific description: Checks if the data on sales of detahced, semi-detached, terraced and flats has a negative value. 
 ```{python}
-test_neg = ((housing_sale_counts['Detached' or 'Semi-detached' or 'Terraced' or 'Flats']) < 0).any().any()
+test_neg = ((housing_sale_counts['Detached' or 'Semi-detached' or 'Terraced' or 'Flats']) < 0).any()
 print ("Status:")
 print (test_neg)
-print("Status description: A true means there is no negative values (Pass). A false means there is a negative value (Fail).")
+print("Status description: A true means there is a negative values (Fail). A false means there is no negative value (Pass).")
 ```
 
+Test 4a:  
 
-Test 4: 
-Description: Checks if any of the variables in the dataset has a negative value.
-Data specific description: Checks if the data on prices of detahced, semi-detached, terraced and flats has a negative value. 
+Description: Checks if any of the variables in the dataset has a missing value.
+Data specific description: Checks if the data on prices of detahced, semi-detached, terraced and flats has a missing value. 
+Status:
 ```{python}
-test_neg = ((housing_median_sale_price['Detached' or 'Semi-detached' or 'Terraced' or 'Flats']) < 0).any().any()
-print ("Status:")
-print (test_neg)
-print("Status description: A true means there is no negative values (Pass). A false means there is a negative value (Fail).")
-```
-
-Test 5: There shouldn’t be an alphabet in sales  
-```{python}
-```
-
-Test 6: There shouldn’t be an alphabet in prices  
-```{python}
-```
-
-Test 7a: Are there any missing values?  
-Test 7b: If yes, how many?
-```{python}
-```
-
-Test 8: A local authority name should only appear 5 times in data  
-```{python}
-```
-
-Test 9:	A local authority code should only appear 5 times in data  
-```{python}
-```
-Test 10: Detect outliers  
-```{python}
-```
-
-How I want it like: 
-Test 1: 
-Description: Checks if sum of columns equals total. 
-Long_description: Checks if sum of detahced, semi-detached, terraced and flats equals all dwelling types.
-Status: Pass/Fail
-Status_description: A pass means sum of columns equals total. A fail means sum of columns do not equals total.
-If fail, location of failure: 
+display(Markdown(f"""There are {housing_sale_counts.isnull().values.sum()} missing values in the dataset.  """))
 ``` 
 
-Failed: Error in observation 10
+Test 4b: 
 
-Test 2: Flats should be lesser than all other dwelling types  
-Failed: Error ...
+Description: Checks the location of missing values in the dataset.  
+Data specific description: Checks the location of missing values in the data on prices of detahced, semi-detached, terraced and flats has a missing value. 
+```{python}
+display(Markdown(f""" Location: The location of missing values is as follows:  
+{housing_sale_counts[housing_sale_counts['Detached'].isnull()]} """))
+``` 
 
-Test 3: There shouldn’t be a negative value in sales  
-Passed 
+Test 5:  
 
-Test 4: There shouldn’t be a negative value in prices  
-Passed:
-
-Test 5: There shouldn’t be an alphabet in sales  
-
-
-Test 6: There shouldn’t be an alphabet in prices  
-
-Test 7a: Are there any missing values?  
-Test 7b: If yes, how many?
-
-Test 8: A local authority name should only appear 5 times in data  
+Description: Checks if any of the variables in the dataset has a negative value.  
+Data specific description: Checks if the data on prices of detahced, semi-detached, terraced and flats has a negative value. 
 
 
-Test 9:	A local authority code should only appear 5 times in data  
+Test 6:  
+Description: Checks if any values of the variables in the dataset contains a letter.  
+Data specific description: Checks if the data on sales of detahced, semi-detached, terraced and flats has a non-numeric value. 
+```{python}
 
-Test 10: Detect outliers  
+```
 
-## Checking characteristics of the data
+Test 7a:  
+Description: Checks if a certain value appears specific times in data.  
+Data specific description: Checks if a local authority name appears only 5 times in the dataset.  
+```{python}
+```
+
+Test 7b:  
+Description: Checks if a certain value appears specific times in data.  
+Data specific description: Checks if a local authority code appears only 5 times in the dataset.  
+```{python}
+```
+
+## Data characteristics' tests
 
 Test 1: Plot trend of sales and prices by dwelling types
 
 Test 2: What does the data distribution look like? 
 
-Test 3: Is there any correlation between tpe of dwellings and house price?
+Test 3: Are there any outliers?
+
+Test 4: Is there any correlation between tpe of dwellings and house price?

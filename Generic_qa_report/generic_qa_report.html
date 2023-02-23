@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Shazmeen Maroof">
-<meta name="dcterms.date" content="2023-02-21">
+<meta name="dcterms.date" content="2023-02-23">
 
 <title>Quality Assurance Report</title>
 <style>
@@ -2548,8 +2548,10 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#summary-of-tests-performed" id="toc-summary-of-tests-performed" class="nav-link" data-scroll-target="#summary-of-tests-performed">Summary of tests performed</a></li>
+  <li><a href="#table-1-list-of-tests" id="toc-table-1-list-of-tests" class="nav-link" data-scroll-target="#table-1-list-of-tests">Table 1: List of tests</a></li>
+  <li><a href="#table-2-list-of-failed-tests-with-their-location" id="toc-table-2-list-of-failed-tests-with-their-location" class="nav-link" data-scroll-target="#table-2-list-of-failed-tests-with-their-location">Table 2: List of failed tests with their location</a></li>
   <li><a href="#data-cleaning-tests" id="toc-data-cleaning-tests" class="nav-link" data-scroll-target="#data-cleaning-tests">Data cleaning tests</a></li>
-  <li><a href="#checking-characteristics-of-the-data" id="toc-checking-characteristics-of-the-data" class="nav-link" data-scroll-target="#checking-characteristics-of-the-data">Checking characteristics of the data</a></li>
+  <li><a href="#data-characteristics-tests" id="toc-data-characteristics-tests" class="nav-link" data-scroll-target="#data-characteristics-tests">Data characteristics’ tests</a></li>
   </ul>
 </nav>
 </div>
@@ -2576,7 +2578,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 21, 2023</p>
+      <p class="date">February 23, 2023</p>
     </div>
   </div>
   
@@ -2590,37 +2592,93 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
-<p>The title of the dataset is House Price Statistics for Small Areas. These statistics were adapted from data from the Land Registry licensed under the Open Government Licence v.3.0.. The data has been taken from Office for National Statistics (ONS). The data is published annually. The data spans from 2000 to 2004. The data limitations are unknown. The data is published without confidence intervals. Publishing confidence intervals is a work in progress.</p>
+<p>The title of the dataset is House Price Statistics for Small Areas. These statistics were adapted from data from the Land Registry licensed under the Open Government Licence v.3.0. The data has been taken from Office for National Statistics (ONS). The data is published annually. The data spans from 2000 to 2004. The data limitations are unknown. The data is published without confidence intervals. Publishing confidence intervals is a work in progress.</p>
 </div>
 </div>
 </section>
 <section id="summary-of-tests-performed" class="level2">
 <h2 class="anchored" data-anchor-id="summary-of-tests-performed">Summary of tests performed</h2>
-<p>There are “nrows” and “ncolumns” in the dataset. We have performed 10 tests on the data. The data has passed 4 tests and failed 3.</p>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<p>There are 490 rows and 8 columns in the dataset. We have performed “n” tests on the data. The data has passed “n” tests and failed “n”.</p>
+</div>
+</div>
+</section>
+<section id="table-1-list-of-tests" class="level2">
+<h2 class="anchored" data-anchor-id="table-1-list-of-tests">Table 1: List of tests</h2>
+<p>The table would include columns on 1) Test number, 2) Test Description, 3) Data Specific Description of test, 4) Test Status, 5) Description of Status). I will compile the table after performing all the tests.</p>
+</section>
+<section id="table-2-list-of-failed-tests-with-their-location" class="level2">
+<h2 class="anchored" data-anchor-id="table-2-list-of-failed-tests-with-their-location">Table 2: List of failed tests with their location</h2>
+<p>Pending</p>
 </section>
 <section id="data-cleaning-tests" class="level2">
 <h2 class="anchored" data-anchor-id="data-cleaning-tests">Data cleaning tests</h2>
-<p>Test 1: All dwelling types should be the sum of detached, semi-detached, terraced and flats<br>
-Failed: Error in observation 10</p>
-<p>Test 2: Flats should be lesser than all other dwelling types<br>
-Failed: Error …</p>
-<p>Test 3: There shouldn’t be a negative value in sales<br>
-Passed</p>
-<p>Test 4: There shouldn’t be a negative value in prices<br>
-Passed:</p>
-<p>Test 5: There shouldn’t be an alphabet in sales</p>
-<p>Test 6: There shouldn’t be an alphabet in prices</p>
-<p>Test 7a: Are there any missing values?<br>
-Test 7b: If yes, how many?</p>
-<p>Test 8: A local authority name should only appear 5 times in data</p>
-<p>Test 9: A local authority code should only appear 5 times in data</p>
-<p>Test 10: Detect outliers</p>
+<p>Test 1:</p>
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>Description: Checks if sum of variables equals total.
+Data specific description: Checks if sum of detahced, semi-detached, terraced and flats equals all dwelling types
+Status: Fail. A fail means sum of varaibles do not equal total.
+False</code></pre>
+</div>
+</div>
+<p>Test 2:</p>
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-stdout">
+<pre><code>Description: Checks if values of a variable are always less than other.
+Data specific description: Checks if the number of flats are lesser than the number of all other dwelling types in all councils.
+Status: Fail. A fail means number of flats are not less than all other dwelling types in atleast one council.
+False</code></pre>
+</div>
+</div>
+<p>Test 3:</p>
+<p>Description: Checks if any of the variables in the dataset has a negative value. Data specific description: Checks if the data on sales of detahced, semi-detached, terraced and flats has a negative value.</p>
+<div class="cell" data-execution_count="7">
+<div class="cell-output cell-output-stdout">
+<pre><code>Status:
+False
+Status description: A true means there is a negative values (Fail). A false means there is no negative value (Pass).</code></pre>
+</div>
+</div>
+<p>Test 4a:</p>
+<p>Description: Checks if any of the variables in the dataset has a missing value. Data specific description: Checks if the data on prices of detahced, semi-detached, terraced and flats has a missing value. Status:</p>
+<div class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<p>There are 2 missing values in the dataset.</p>
+</div>
+</div>
+<p>Test 4b:</p>
+<p>Description: Checks the location of missing values in the dataset.<br>
+Data specific description: Checks the location of missing values in the data on prices of detahced, semi-detached, terraced and flats has a missing value.</p>
+<div class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<p>Location: The location of missing values is as follows:<br>
+Code LA_Name Year All_dwelling_types Detached<br>
+3 E06000004 Stockton-on-Tees 2000 3887 NaN</p>
+<p>Semi-detached Terraced Flats<br>
+3 NaN 873 84</p>
+</div>
+</div>
+<p>Test 5:</p>
+<p>Description: Checks if any of the variables in the dataset has a negative value.<br>
+Data specific description: Checks if the data on prices of detahced, semi-detached, terraced and flats has a negative value.</p>
+<p>Test 6:<br>
+Description: Checks if any values of the variables in the dataset contains a letter.<br>
+Data specific description: Checks if the data on sales of detahced, semi-detached, terraced and flats has a non-numeric value.</p>
+<p>Test 7a:<br>
+Description: Checks if a certain value appears specific times in data.<br>
+Data specific description: Checks if a local authority name appears only 5 times in the dataset.</p>
+<p>Test 7b:<br>
+Description: Checks if a certain value appears specific times in data.<br>
+Data specific description: Checks if a local authority code appears only 5 times in the dataset.</p>
 </section>
-<section id="checking-characteristics-of-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="checking-characteristics-of-the-data">Checking characteristics of the data</h2>
+<section id="data-characteristics-tests" class="level2">
+<h2 class="anchored" data-anchor-id="data-characteristics-tests">Data characteristics’ tests</h2>
 <p>Test 1: Plot trend of sales and prices by dwelling types</p>
 <p>Test 2: What does the data distribution look like?</p>
-<p>Test 3: Is there any correlation between tpe of dwellings and house price?</p>
+<p>Test 3: Are there any outliers?</p>
+<p>Test 4: Is there any correlation between tpe of dwellings and house price?</p>
 </section>
 
 </main>
