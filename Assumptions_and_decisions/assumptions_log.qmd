@@ -1,0 +1,62 @@
+---
+title: "Assumptions log"
+Assumptions last updated: now
+execute:
+  echo: false
+format:
+  html:
+    embed-resources: true
+    toc: true
+    toc-title: "Contents"
+    toc-location: left
+    html-math-method: katex
+---
+```{python}
+import numpy as np
+import pandas as pd
+from IPython.display import display, Markdown
+
+assumptions = pd.read_excel("D:\\git_demo\\Assumptions_and_decisions/assumptions_and_decision_log_template.xlsx", sheet_name="assumptions")
+```
+
+
+This log contains a list of assumptions used in this analysis.
+
+## Definitions
+
+Assumptions are red, amber or green (RAG) rated according to the following definitions for quality and impact (would replace this table with quality rating in our template)[^1]:
+
+| RAG rating | Assumption quality | Assumption impact |
+|------------|--------------------|-------------------|
+| GREEN | Reliable assumption, well understood and/or documented; anything up to a validated & recent set of actual data. | Marginal assumptions; their changes have no or limited impact on the outputs.  |
+| AMBER | Some evidence to support the assumption; may vary from a source with poor methodology to a good source that is a few years old. | Assumptions with a relevant, even if not critical, impact on the outputs. |
+| RED   | Little evidence to support the assumption; may vary from an opinion to a limited data source with poor methodology. | Core assumptions of the analysis; the output would be drastically affected by their change. |
+
+[^1]: With thanks to the Home Office Analytical Quality Assurance team for these definitions. 
+
+## Assumptions
+
+This analysis contains the following assumptions:
+
+### Assumption 1: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[0, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[0, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[0, 'Sensitivity Score']}  
+Description: {assumptions.at[0, 'Plain English description of assumption']}  """))
+``` 
+
+### Assumption 2: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[1, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[1, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[1, 'Sensitivity Score']}  
+Description: {assumptions.at[1, 'Plain English description of assumption']}  """))
+``` 
+
+
+
