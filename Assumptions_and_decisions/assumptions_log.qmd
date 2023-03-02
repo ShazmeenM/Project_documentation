@@ -58,5 +58,74 @@ display(Markdown(f"""
 Description: {assumptions.at[1, 'Plain English description of assumption']}  """))
 ``` 
 
+### Assumption 3: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[2, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[2, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[2, 'Sensitivity Score']}  
+Description: {assumptions.at[2, 'Plain English description of assumption']}  """))
+``` 
+
+### Assumption 4: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[3, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[3, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[3, 'Sensitivity Score']}  
+Description: {assumptions.at[3, 'Plain English description of assumption']}  """))
+``` 
+
+### Assumption 5: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[4, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[4, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[4, 'Sensitivity Score']}  
+Description: {assumptions.at[4, 'Plain English description of assumption']}  """))
+``` 
+
+### Assumption 6: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[5, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[5, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[5, 'Sensitivity Score']}  
+Description: {assumptions.at[5, 'Plain English description of assumption']}  """))
+``` 
+
+### Assumption 7: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[6, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[6, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[6, 'Sensitivity Score']}  
+Description: {assumptions.at[6, 'Plain English description of assumption']}  """))
+``` 
+
+### Assumption 8: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[7, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[7, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[7, 'Sensitivity Score']}  
+Description: {assumptions.at[7, 'Plain English description of assumption']}  """))
+``` 
+
+### Assumption 9: Title of assumption
+
+```{python}
+display(Markdown(f"""   
+* **Location in code/publication**: {assumptions.at[8, 'Location in code/publication']}  
+* **Quality**: {assumptions.at[8, 'Quality Rating']}  
+* **Senstivity Score**: {assumptions.at[8, 'Sensitivity Score']}  
+Description: {assumptions.at[8, 'Plain English description of assumption']}  """))
+``` 
 
 
