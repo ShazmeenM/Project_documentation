@@ -18,11 +18,11 @@ import numpy as np
 import pandas as pd
 from IPython.display import display, Markdown
 
-housing_introduction = pd.read_excel("D:\\git_demo\\Generic_qa_report/Data/Housing_data.xlsx", sheet_name="introduction")
+housing_introduction = pd.read_excel("D:\\git_demo\\Data/Housing_data.xlsx", sheet_name="introduction")
 
-housing_sale_counts = pd.read_excel("D:\\git_demo\\Generic_qa_report/Data/Housing_data.xlsx", sheet_name="sale_counts")
+housing_sale_counts = pd.read_excel("D:\\git_demo\\Data/Housing_data.xlsx", sheet_name="sale_counts")
 
-housing_median_sale_price = pd.read_excel("D:\\git_demo\\Generic_qa_report/Data/Housing_data.xlsx", sheet_name="median_sale_price")
+housing_median_sale_price = pd.read_excel("D:\\git_demo\\Data/Housing_data.xlsx", sheet_name="median_sale_price")
 ```
 
 ## Introduction
