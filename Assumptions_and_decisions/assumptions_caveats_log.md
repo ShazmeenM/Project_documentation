@@ -16,10 +16,32 @@ Assumptions are red, amber or green (RAG) rated according to the following defin
 
 ## Assumptions and caveats
 
-Assumptions and caveats last updated: 09/03/2023
+Assumptions and caveats last updated: 13/03/2023
 
 This analysis contains the following assumptions and caveats:
 
-Currently no assumptions in this analysis.
+### Assumption 1: Number of detached houses are more than flats 
+
+* Location: `Assumptions_and_decisions/Quantitative_assumptions/assumptions_in_code.py`
+* **Quality**: RED
+* **Impact**: AMBER
+
+Detailed description: Total number of detached houses in a local authority are greater than total number of flats.
+
+### Assumption 2: House prices are increasing over time
+
+* Location: `Assumptions_and_decisions/Quantitative_assumptions/assumptions_in_code.py`
+* **Quality**: RED
+* **Impact**: AMBER
+
+Detailed description: Total sale price of each dwelling type in time 't' should be less than time 't+1'.
+
+### Assumption 3: House prices cannot be negative
+
+* Location: `Assumptions_and_decisions/Quantitative_assumptions/assumptions_in_code.py`
+* **Quality**: RED
+* **Impact**: AMBER
+
+Detailed description: Total sale price of each dwelling type in a local authority in a year should always be a positive number.
 
 Currently no caveats in this analysis.

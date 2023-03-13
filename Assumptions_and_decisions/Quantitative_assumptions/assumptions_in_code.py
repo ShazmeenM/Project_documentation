@@ -5,11 +5,11 @@ housing_introduction = pd.read_excel("D:\\git_demo\\Data/Housing_data.xlsx", she
 housing_sale_counts = pd.read_excel("D:\\git_demo\\Data/Housing_data.xlsx", sheet_name="sale_counts")
 housing_median_sale_price = pd.read_excel("D:\\git_demo\\Data/Housing_data.xlsx", sheet_name="median_sale_price")
 
-
 # Assumption: Number of detached houses are more than flats 
-# Quality:
-# Sensitivity Score:
-# Long description: Total number of detached houses in a local authority are greater than total number of flats.
+# Quality: RED
+# Impact: AMBER
+# Detailed description: Total number of detached houses in a local authority are greater than total number of flats.
+
 
 def test_num_flats():
     print("Description: Checks if values of a variable are always less than other.")  
@@ -23,16 +23,15 @@ def test_num_flats():
 print (test_num_flats())
 housing_sale_counts[(housing_sale_counts['All_dwelling_types']) < (housing_sale_counts['Flats'])]
 
-
 # Assumption: House prices are increasing over time
-# Quality:
-# Sensitivity Score:
-# Long description: Total sale price of each dwelling type in time 't' should be less than time 't+1'.
+# Quality: RED
+# Impact: AMBER
+# Detailed description: Total sale price of each dwelling type in time 't' should be less than time 't+1'.
 
 # Assumption: House prices cannot be negative
-# Quality:
-# Sensitivity Score:
-# Long description: Total sale price of each dwelling type in a local authority in a year should always be a positive number.
+# Quality: RED
+# Impact: AMBER
+# Detailed description: Total sale price of each dwelling type in a local authority in a year should always be a positive number.
 
 test_neg = ((housing_sale_counts['Detached' or 'Semi-detached' or 'Terraced' or 'Flats']) < 0).any()
 print ("Status:")

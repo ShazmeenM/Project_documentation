@@ -1,6 +1,6 @@
 ---
-title: "Assumptions log"
-Assumptions last updated: now
+title: "Qualitative Assumptions log"
+date: now
 execute:
   echo: false
 format:
@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 from IPython.display import display, Markdown
 
-assumptions = pd.read_excel("D:\\git_demo\\Assumptions_and_decisions/assumptions_and_decision_log_template.xlsx", sheet_name="assumptions")
+assumptions = pd.read_excel("D:\\git_demo\\Assumptions_and_decisions/Qualitative_assumptions/assumptions_and_decision_log_template.xlsx", sheet_name="assumptions")
 ```
 
 
